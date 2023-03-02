@@ -44,5 +44,8 @@ const config: HardhatUserConfig = {
 };
 ```
 
+## Launch a blockchain
 
-
+```
+yarn hardhat node
+```
