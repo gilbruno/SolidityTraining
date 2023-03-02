@@ -100,6 +100,9 @@ function Home() {
               <li className="nav-item">
                   <NavLink className="nav-link" to="/dashboard">Dashboard</NavLink>
               </li>
+              <li className="nav-item">
+                  <NavLink className="nav-link" to="/eip712">Relayer</NavLink>
+              </li>
               {connection}
           </ul>
           <div className="toast align-items-center text-white bg-primary border-0" id="test" role="alert" aria-live="assertive" aria-atomic="true">
