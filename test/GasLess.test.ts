@@ -11,7 +11,7 @@ describe("GasLess", function () {
   let gaslessContract: Contract
 
   before(async function () {
-    [this.address1, this.address2, ...this.addresses] = await ethers.getSigners()
+    [this.account1, this.account2, ...this.accounts] = await ethers.getSigners()
     const GasLessContract = await ethers.getContractFactory('GasLess')
     gaslessContract = await GasLessContract.deploy()
   });
@@ -25,7 +25,7 @@ describe("GasLess", function () {
 
     it("Should not accept empty message", async function () {
       let emptyMessage = ''
-      await expect(gaslessContract.setMessage(emptyMessage)).to.be.revertedWith('A message is required');
+      await expect(gaslessContract.setMessage(emptyMessage)).to.be.revertedWith('A message is required')
     });
 
     it("Should set message correctly", async function () {
@@ -33,8 +33,16 @@ describe("GasLess", function () {
       await gaslessContract.setMessage(message)
       let messageOnTheBlockchain = await gaslessContract.getMessage()
       assert.equal(message, messageOnTheBlockchain)
-
     });
+
+    it("Should set sender correctly", async function () {
+      const msg = 'Test!'
+      let signer = this.account1
+      await gaslessContract.connect(signer).setMessage(msg)
+      const awaitedSigner = await gaslessContract.getSender()
+      assert.equal(signer.address, awaitedSigner)
+    });
+
 
   });
 
