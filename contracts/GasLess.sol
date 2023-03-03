@@ -4,7 +4,7 @@ pragma solidity ^0.8.17;
 
 contract GasLess {
 
-    string public message = "";
+    string public message = "Hello!";
     address public sender;
 
     event MessageUpdated(address sender, string newMessage);

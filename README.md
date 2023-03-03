@@ -71,5 +71,11 @@ yarn hardhat typechain
 
 Somehow, run this command enables you to see compilation errors in your smart contract so it can be useful
 
+## Run some tests
 
+Launch the following command : 
+
+```bash
+yarn hardhat test
+```
 
