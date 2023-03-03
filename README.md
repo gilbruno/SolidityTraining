@@ -44,7 +44,16 @@ const config: HardhatUserConfig = {
 };
 ```
 
-## Launch a blockchain
+If you want to deploy a smart contract on local blockchain provided by hardhat, you have to run : 
+
+```bash
+nnpx hardhat run scripts/deploy.ts --network localhost
+```
+
+Before this you absolutely need to run a local blockchain by typing the following command in the next section _Launch a local blockchain_
+
+
+## Launch a local blockchain
 
 ```
 yarn hardhat node
