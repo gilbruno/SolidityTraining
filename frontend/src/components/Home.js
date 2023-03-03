@@ -6,7 +6,9 @@ import Web3 from "web3";
 import {NavLink} from 'react-router-dom';
 import Toast from 'react-bootstrap/Toast';
 import WalletContract from "../contracts/Wallet.sol/Wallet.json";
+import GasLessContract from "../contracts/GasLess.sol/GasLess.json";
 import getWeb3 from "../web3";
+import Gasless from './Gasless';
 
 function Home() {
 
@@ -41,7 +43,7 @@ function Home() {
         const networkId = await web3.eth.net.getId();
         const deployedNetwork = WalletContract.networks[networkId];
         const instance = new web3.eth.Contract(
-            WalletContract.abi,
+            GasLessContract.abi,
           deployedNetwork && deployedNetwork.address,
         );
 
@@ -101,7 +103,7 @@ function Home() {
                   <NavLink className="nav-link" to="/dashboard">Dashboard</NavLink>
               </li>
               <li className="nav-item">
-                  <NavLink className="nav-link" to="/eip712">Relayer</NavLink>
+                  <NavLink className="nav-link" to="/gasless">Gasless</NavLink>
               </li>
               {connection}
           </ul>
@@ -118,6 +120,7 @@ function Home() {
     </nav>
         <Routes>
             <Route path="/dashboard" element={<Dashboard connectedAccount={connectedAccount} stateProps={state}/>}/>  
+            <Route path="/gasless" element={<Gasless connectedAccount={connectedAccount} stateProps={state}/>}/>  
             <Route path="/" element={<HomeContent/>}/>      
 
         </Routes>

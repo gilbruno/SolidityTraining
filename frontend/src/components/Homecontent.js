@@ -1,6 +1,4 @@
 import React from 'react'
-import {Link} from 'react-router-dom';
-import CardIcon from './CardIcon';
 
 function HomeContent() {
 
@@ -26,7 +24,7 @@ function HomeContent() {
           <a href="dashboard" class="card-link">Dashboard</a>
         </div>
         <div class="card-body">
-          <a href="eip712" class="card-link">Eip712</a>
+          <a href="gasless" class="card-link">Gasless</a>
         </div>
       </div>
 
