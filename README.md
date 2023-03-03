@@ -58,3 +58,18 @@ Before this you absolutely need to run a local blockchain by typing the followin
 ```
 yarn hardhat node
 ```
+
+## Generate all the types of our smart contracts
+
+This command is useful to generate the types of our smart contracts in the directory _typechain_types_.
+The typescript files generated are used to write some TS testscripts for instance
+
+
+```
+yarn hardhat typechain
+```
+
+Somehow, run this command enables you to see compilation errors in your smart contract so it can be useful
+
+
+
